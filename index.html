@@ -5,13 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bookaa Platform | Next-Gen Enterprise Infrastructure</title>
     <style>
-        :root { --primary: #232f3e; --accent: #ff9900; --danger: #e44d26; --light: #f4f4f4; }
+        :root { --primary: #232f3e; --accent: #ff9900; --danger: #e44d26; --light: #f4f4f4; --thai-blue: #00247d; }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.7; color: #333; max-width: 1000px; margin: 0 auto; padding: 20px; background-color: #fff; }
         header { border-bottom: 3px solid var(--primary); padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: center; }
         .badge { background: var(--primary); color: white; padding: 6px 15px; border-radius: 20px; font-size: 0.85em; font-weight: bold; }
         h1 { color: var(--primary); margin: 0; font-size: 2.2em; }
         h2 { color: var(--primary); border-left: 6px solid var(--accent); padding-left: 15px; margin-top: 40px; font-size: 1.6em; }
         h3 { color: var(--accent); margin-bottom: 10px; }
+        
+        .vision-box { background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border: 1px solid #dee2e6; border-top: 4px solid var(--thai-blue); padding: 30px; border-radius: 12px; margin: 25px 0; text-align: center; }
+        .vision-text { font-size: 1.25em; color: var(--thai-blue); font-weight: bold; margin-bottom: 15px; }
         
         .feature-box { background: var(--light); padding: 25px; border-radius: 0 12px 12px 0; border-left: 5px solid var(--primary); margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
         .disrupt-box { background: #fffbe6; border: 1px solid #ffe58f; border-left: 5px solid var(--accent); padding: 25px; border-radius: 8px; margin: 25px 0; }
@@ -24,6 +27,7 @@
 
         .tech-spec { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
         .spec-item { background: #e8eaed; padding: 5px 12px; border-radius: 4px; font-size: 0.85em; color: #555; border: 1px solid #dcdcdc; font-weight: bold; }
+        .spec-global { background: #e3f2fd; color: #0d47a1; border-color: #bbdefb; }
 
         .lang-section { display: none; animation: fadeIn 0.4s ease; }
         .lang-section.active { display: block; }
@@ -45,6 +49,16 @@
 </header>
 
 <div id="content-th" class="lang-section active">
+    <div class="vision-box">
+        <div class="vision-text">"แพลตฟอร์มของคนไทย เพื่อยกระดับธุรกิจไทยสู่สากล"</div>
+        <p>เรามุ่งมั่นสร้างสรรค์เทคโนโลยีโดยฝีมือคนไทย 100% ภายใต้มาตรฐานวิศวกรรมซอฟต์แวร์ระดับโลก เพื่อให้ผู้ประกอบการไทยเข้าถึงเครื่องมือที่ทรงพลังที่สุดในยุคปัจจุบัน</p>
+        <div class="tech-spec" style="justify-content: center;">
+            <div class="spec-item spec-global">🚀 ขับเคลื่อนด้วย AI อัจฉริยะ</div>
+            <div class="spec-item spec-global">☁️ Google Cloud Standard</div>
+            <div class="spec-item spec-global">🛡️ AWS World-Class Infra</div>
+        </div>
+    </div>
+
     <section>
         <h2>โมเดลธุรกิจอัจฉริยะ (Strategic Disruptor)</h2>
         <div class="disrupt-box">
@@ -91,13 +105,23 @@
             </div>
             <ul style="margin-top: 15px;">
                 <li><strong>Performance:</strong> สถาปัตยกรรม 100 TPS มั่นใจได้ว่าระบบจะไม่ล่มในช่วง Peak Season</li>
-                <li><strong>Future-Proof:</strong> พัฒนาตามมาตรฐาน Google Production 2026</li>
+                <li><strong>Future-Proof:</strong> พัฒนาตามมาตรฐาน Google Production 2026 ปลอดปัญหาแอปพลิเคชัน Crash บน Mobile</li>
             </ul>
         </div>
     </section>
 </div>
 
 <div id="content-en" class="lang-section">
+    <div class="vision-box">
+        <div class="vision-text">"Thai-Built Platform, World-Class Standards"</div>
+        <p>A homegrown innovation engineered for the global stage, empowering local businesses with the world's most advanced technology stack.</p>
+        <div class="tech-spec" style="justify-content: center;">
+            <div class="spec-item spec-global">🚀 AI Driven Insights</div>
+            <div class="spec-item spec-global">☁️ Google Cloud Standard</div>
+            <div class="spec-item spec-global">🛡️ AWS World-Class Infra</div>
+        </div>
+    </div>
+
     <section>
         <h2>Strategic Disruptor Model</h2>
         <div class="disrupt-box">
@@ -144,14 +168,14 @@
             </div>
             <ul style="margin-top: 15px;">
                 <li><strong>Performance:</strong> 100 TPS architecture ensures stability during peak traffic.</li>
-                <li><strong>Future-Proof:</strong> Built on Google Production 2026 standards.</li>
+                <li><strong>Future-Proof:</strong> Built on Google Production 2026 standards, ensuring zero-crash runtime on mobile.</li>
             </ul>
         </div>
     </section>
 </div>
 
 <footer>
-    <p>&copy; 2026 MaassLabs Co.,Ltd. All rights reserved. <br> Powered by AWS Cloud Infrastructure.</p>
+    <p>&copy; 2026 MaassLabs Co.,Ltd. All rights reserved. <br> Powered by AWS Global Infrastructure & Google Tech Standards.</p>
 </footer>
 
 <script>
