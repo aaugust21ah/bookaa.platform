@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bookaa Platform | Next-Gen Enterprise Infrastructure</title>
     <style>
-        :root { --primary: #232f3e; --accent: #ff9900; --danger: #e44d26; --light: #f4f4f4; --thai-blue: #00247d; }
+        :root { --primary: #232f3e; --accent: #ff9900; --danger: #e44d26; --light: #f4f4f4; --thai-blue: #00247d; --code-bg: #272822; }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.7; color: #333; max-width: 1000px; margin: 0 auto; padding: 20px; background-color: #fff; }
         header { border-bottom: 3px solid var(--primary); padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: center; }
         .badge { background: var(--primary); color: white; padding: 6px 15px; border-radius: 20px; font-size: 0.85em; font-weight: bold; }
@@ -28,6 +28,12 @@
         .tech-spec { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
         .spec-item { background: #e8eaed; padding: 5px 12px; border-radius: 4px; font-size: 0.85em; color: #555; border: 1px solid #dcdcdc; font-weight: bold; }
         .spec-global { background: #e3f2fd; color: #0d47a1; border-color: #bbdefb; }
+
+        .api-guide { background: #1e1e1e; color: #d4d4d4; padding: 20px; border-radius: 8px; font-family: 'Consolas', monospace; margin-top: 15px; overflow-x: auto; }
+        .method { color: #569cd6; font-weight: bold; }
+        .url { color: #ce9178; }
+        .json-key { color: #9cdcfe; }
+        .json-val { color: #ce9178; }
 
         .lang-section { display: none; animation: fadeIn 0.4s ease; }
         .lang-section.active { display: block; }
@@ -103,9 +109,29 @@
                 <div class="spec-item">AWS Elastic Infrastructure</div>
                 <div class="spec-item">DisplayAlertAsync Optimized</div>
             </div>
-            <ul style="margin-top: 15px;">
-                <li><strong>Performance:</strong> สถาปัตยกรรม 100 TPS มั่นใจได้ว่าระบบจะไม่ล่มในช่วง Peak Season</li>
-                <li><strong>Future-Proof:</strong> พัฒนาตามมาตรฐาน Google Production 2026 ปลอดปัญหาแอปพลิเคชัน Crash บน Mobile</li>
+        </div>
+    </section>
+
+    <section>
+        <h2>การทดสอบระบบผ่าน Postman (API Integration)</h2>
+        <p>นักพัฒนาสามารถทดสอบฟังก์ชันการขอรหัส OTP สำหรับการลงทะเบียนพาร์ทเนอร์ใหม่ได้ดังนี้:</p>
+        <div class="feature-box">
+            <h3>1. Request OTP Endpoint</h3>
+            <p><strong>Method:</strong> <span class="badge" style="background:#4caf50">POST</span></p>
+            <p><strong>URL:</strong> <code>https://maasslabs.co.th/api/Auth/GetOTP</code></p>
+            
+            <p><strong>Body (JSON):</strong></p>
+            <div class="api-guide">
+{
+  <span class="json-key">"EmailRequest"</span>: <span class="json-val">"partner@example.com"</span>
+}
+            </div>
+
+            <h3 style="margin-top:20px;">2. การตอบกลับจากระบบ (Response)</h3>
+            <ul>
+                <li><strong>Success (200 OK):</strong> ส่ง Email สำเร็จ และส่ง <code>reference</code> กลับไปให้แอปพลิเคชัน</li>
+                <li><strong>Conflict (409):</strong> กรณี Email นี้เคยลงทะเบียนในฐานข้อมูล <code>tblHostModel</code> แล้ว</li>
+                <li><strong>Error (400/500):</strong> กรณีค่าว่างหรือระบบ Mail Server มีปัญหา</li>
             </ul>
         </div>
     </section>
@@ -166,9 +192,29 @@
                 <div class="spec-item">AWS Elastic Infrastructure</div>
                 <div class="spec-item">DisplayAlertAsync Optimized</div>
             </div>
-            <ul style="margin-top: 15px;">
-                <li><strong>Performance:</strong> 100 TPS architecture ensures stability during peak traffic.</li>
-                <li><strong>Future-Proof:</strong> Built on Google Production 2026 standards, ensuring zero-crash runtime on mobile.</li>
+        </div>
+    </section>
+
+    <section>
+        <h2>Postman Integration Guide</h2>
+        <p>Developers can test the OTP generation flow for partner registration using the following specs:</p>
+        <div class="feature-box">
+            <h3>1. Request OTP Endpoint</h3>
+            <p><strong>Method:</strong> <span class="badge" style="background:#4caf50">POST</span></p>
+            <p><strong>URL:</strong> <code>https://maasslabs.co.th/api/Auth/GetOTP</code></p>
+            
+            <p><strong>Body (JSON):</strong></p>
+            <div class="api-guide">
+{
+  <span class="json-key">"EmailRequest"</span>: <span class="json-val">"partner@example.com"</span>
+}
+            </div>
+
+            <h3 style="margin-top:20px;">2. Response Handling</h3>
+            <ul>
+                <li><strong>200 OK:</strong> OTP sent to email; returns <code>reference</code> code.</li>
+                <li><strong>409 Conflict:</strong> Email already exists in <code>tblHostModel</code>.</li>
+                <li><strong>500 Internal Error:</strong> Failures in email service or DB persistence.</li>
             </ul>
         </div>
     </section>
