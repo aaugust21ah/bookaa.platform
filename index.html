@@ -130,7 +130,7 @@
             <h3 style="margin-top:20px;">2. การตอบกลับจากระบบ (Response)</h3>
             <ul>
                 <li><strong>Success (200 OK):</strong> ส่ง Email สำเร็จ และส่ง <code>reference</code> กลับไปให้แอปพลิเคชัน</li>
-                <li><strong>Conflict (409):</strong> กรณี Email นี้เคยลงทะเบียนในฐานข้อมูล <code>tblHostModel</code> แล้ว</li>
+                <li><strong>Conflict (409):</strong> กรณี Email นี้เคยลงทะเบียนในฐานข้อมูลแล้ว</li>
                 <li><strong>Error (400/500):</strong> กรณีค่าว่างหรือระบบ Mail Server มีปัญหา</li>
             </ul>
         </div>
@@ -213,7 +213,7 @@
             <h3 style="margin-top:20px;">2. Response Handling</h3>
             <ul>
                 <li><strong>200 OK:</strong> OTP sent to email; returns <code>reference</code> code.</li>
-                <li><strong>409 Conflict:</strong> Email already exists in <code>tblHostModel</code>.</li>
+                <li><strong>409 Conflict:</strong> Email already exists.</li>
                 <li><strong>500 Internal Error:</strong> Failures in email service or DB persistence.</li>
             </ul>
         </div>
