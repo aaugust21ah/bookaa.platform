@@ -3,30 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bookaa Platform | 100 TPS High-Performance System</title>
+    <title>Bookaa Platform | Next-Gen Enterprise Infrastructure</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 20px; }
-        header { border-bottom: 2px solid #232f3e; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-start; }
-        .badge { background: #232f3e; color: white; padding: 5px 12px; border-radius: 15px; font-size: 0.8em; }
-        h1 { color: #232f3e; margin: 0; }
-        h2 { color: #232f3e; border-left: 5px solid #ff9900; padding-left: 10px; margin-top: 30px; }
-        .feature-box { background: #f4f4f4; padding: 20px; border-left: 5px solid #232f3e; margin: 20px 0; border-radius: 0 8px 8px 0; }
-        .highlight { color: #e44d26; font-weight: bold; font-size: 1.2em; }
-        .grid-container { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        :root { --primary: #232f3e; --accent: #ff9900; --danger: #e44d26; --light: #f4f4f4; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.7; color: #333; max-width: 1000px; margin: 0 auto; padding: 20px; background-color: #fff; }
+        header { border-bottom: 3px solid var(--primary); padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: center; }
+        .badge { background: var(--primary); color: white; padding: 6px 15px; border-radius: 20px; font-size: 0.85em; font-weight: bold; }
+        h1 { color: var(--primary); margin: 0; font-size: 2.2em; }
+        h2 { color: var(--primary); border-left: 6px solid var(--accent); padding-left: 15px; margin-top: 40px; font-size: 1.6em; }
+        h3 { color: var(--accent); margin-bottom: 10px; }
         
-        .lang-switch {
-            background: #ff9900; color: #fff; border: none; padding: 10px 18px;
-            border-radius: 5px; cursor: pointer; font-weight: bold; transition: 0.2s;
-        }
-        .lang-switch:hover { background: #e68a00; }
+        .feature-box { background: var(--light); padding: 25px; border-radius: 0 12px 12px 0; border-left: 5px solid var(--primary); margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .disrupt-box { background: #fffbe6; border: 1px solid #ffe58f; border-left: 5px solid var(--accent); padding: 25px; border-radius: 8px; margin: 25px 0; }
+        
+        .highlight-fee { color: var(--danger); font-weight: 800; font-size: 1.4em; }
+        .grid-container { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-top: 20px; }
+        
+        .lang-switch { background: var(--accent); color: #fff; border: none; padding: 12px 24px; border-radius: 30px; cursor: pointer; font-weight: bold; box-shadow: 0 4px 10px rgba(255,153,0,0.3); transition: 0.3s; }
+        .lang-switch:hover { transform: translateY(-2px); box-shadow: 0 6px 15px rgba(255,153,0,0.4); }
 
-        footer { margin-top: 50px; font-size: 0.8em; color: #777; text-align: center; border-top: 1px solid #ddd; padding-top: 20px; }
-        
-        /* ควบคุมการแสดงผลผ่าน Class แทนการเช็ค style โดยตรงเพื่อป้องกันหน้าจอขาว */
-        .lang-section { display: none; }
+        .tech-spec { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
+        .spec-item { background: #e8eaed; padding: 5px 12px; border-radius: 4px; font-size: 0.85em; color: #555; border: 1px solid #dcdcdc; }
+
+        .lang-section { display: none; animation: fadeIn 0.5s ease; }
         .lang-section.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-        @media (max-width: 600px) { .grid-container { grid-template-columns: 1fr; } header { flex-direction: column; } .lang-switch { margin-top: 15px; } }
+        footer { margin-top: 60px; padding: 30px 0; border-top: 1px solid #eee; text-align: center; color: #888; font-size: 0.9em; }
+        
+        @media (max-width: 768px) { .grid-container { grid-template-columns: 1fr; } header { flex-direction: column; text-align: center; gap: 20px; } }
     </style>
 </head>
 <body>
@@ -34,32 +39,46 @@
 <header>
     <div>
         <h1>Bookaa Platform</h1>
-        <span class="badge">Next-Gen Enterprise Solution (B2B2C)</span>
+        <span class="badge">Enterprise Hybrid Cloud Solutions</span>
     </div>
-    <button class="lang-switch" onclick="toggleLanguage()" id="langBtn">English</button>
+    <button class="lang-switch" onclick="toggleLanguage()" id="langBtn">Switch to English</button>
 </header>
 
 <div id="content-th" class="lang-section active">
     <section>
-        <h2>กลยุทธ์ทำลายล้างตลาด (Disruptive Model)</h2>
-        <div class="feature-box" style="background: #fffbe6; border-color: #ff9900;">
-            <p>เราคือ API Gateway ที่เน้นคืนกำไรให้พาร์ทเนอร์ ด้วยค่าธรรมเนียมที่ <strong>"ต่ำที่สุด"</strong></p>
+        <h2>โมเดลธุรกิจอัจฉริยะ (Strategic Disruptor)</h2>
+        <div class="disrupt-box">
+            <p>Bookaa พลิกโฉมวงการจองที่พักด้วยการเป็นตัวกลางที่มีประสิทธิภาพสูงสุด เราทำหน้าที่เป็น <strong>Core API Ecosystem</strong> ที่เชื่อมโยง B2B และ B2C เข้าด้วยกัน โดยมีจุดยืนที่ชัดเจนคือการลดภาระค่าใช้จ่ายให้ผู้ประกอบการ</p>
             <ul>
-                <li><strong>Bookaa Fee:</strong> <span class="highlight">เพียง 5%</span> (เจ้าอื่น 15-30%)</li>
+                <li><strong>โครงสร้างค่าธรรมเนียม:</strong> เราเก็บค่าธรรมเนียมคงที่เพียง <span class="highlight-fee">5%</span></li>
+                <li><strong>เปรียบเทียบตลาด:</strong> ในขณะที่แพลตฟอร์มอื่นเรียกเก็บ 15% ถึง 30% ทำให้พาร์ทเนอร์ของเราเหลือกำไรสุทธิ (Net Profit) มากขึ้นทันที</li>
+                <li><strong>ความยืดหยุ่น:</strong> ราคาที่ถูกกว่าช่วยให้พาร์ทเนอร์ทำโปรโมชั่นได้แรงกว่าคู่แข่งในตลาด</li>
             </ul>
         </div>
     </section>
 
     <section>
-        <h2>ฟังก์ชันการทำงาน</h2>
+        <h2>รายละเอียดฟังก์ชันการใช้งาน (Functional Specs)</h2>
         <div class="grid-container">
             <div class="feature-box">
-                <h3>📱 Bookaa App (B2C)</h3>
-                <p>สำหรับลูกค้า: จองที่พักแบบ Real-time ผ่าน API</p>
+                <h3>📱 Bookaa Mobile App (B2C)</h3>
+                <p>ประสบการณ์การจองที่พักที่ลื่นไหลสำหรับผู้ใช้งานยุคใหม่ พัฒนาด้วย .NET MAUI เพื่อประสิทธิภาพสูงสุดบนสมาร์ทโฟน</p>
+                <ul>
+                    <li><strong>Smart Search:</strong> ค้นหาที่พักตามพิกัดและราคาที่ดีที่สุดในเสี้ยววินาที</li>
+                    <li><strong>Live Booking:</strong> ระบบจองแบบ Real-time เชื่อมต่อตรงกับระบบ Admin</li>
+                    <li><strong>Secure Vault:</strong> ระบบเก็บข้อมูลสมาชิกและประวัติการจองที่ปลอดภัย</li>
+                    <li><strong>Modern UI:</strong> ออกแบบมาให้ใช้งานง่าย ลดขั้นตอนการ Checkout</li>
+                </ul>
             </div>
             <div class="feature-box">
-                <h3>⚙️ Bookaa Admin (B2B)</h3>
-                <p>สำหรับเจ้าของธุรกิจ: บริหารจัดการ Inventory และรายได้</p>
+                <h3>⚙️ Bookaa Admin Suite (B2B)</h3>
+                <p>เครื่องมือทรงพลังสำหรับเจ้าของธุรกิจ เพื่อควบคุมทุกอย่างผ่านแอปพลิเคชันเดียวบนมือถือและแท็บเล็ต</p>
+                <ul>
+                    <li><strong>Inventory Control:</strong> ปรับสถานะห้องพัก เปิด/ปิด การขายได้ทันที</li>
+                    <li><strong>Revenue Analytics:</strong> รายงานยอดขายและค่าธรรมเนียมแบบ Real-time</li>
+                    <li><strong>Push Notification:</strong> รับแจ้งเตือนคำสั่งจองใหม่ทันทีผ่านระบบ Push</li>
+                    <li><strong>Channel Support:</strong> จัดการข้อมูลที่พัก รูปภาพ และเงื่อนไขการจอง</li>
+                </ul>
             </div>
         </div>
     </section>
@@ -67,43 +86,65 @@
 
 <div id="content-en" class="lang-section">
     <section>
-        <h2>Disruptive Model</h2>
-        <div class="feature-box" style="background: #fffbe6; border-color: #ff9900;">
-            <p>API Gateway with the <strong>"Lowest Commission"</strong> in the market.</p>
+        <h2>Strategic Disruptor Model</h2>
+        <div class="disrupt-box">
+            <p>Bookaa redefines the hospitality landscape as a high-efficiency <strong>Core API Ecosystem</strong>, bridging the gap between B2B and B2C while prioritizing partner profitability.</p>
             <ul>
-                <li><strong>Bookaa Fee:</strong> <span class="highlight">Only 5%</span> (Others 15-30%)</li>
+                <li><strong>Transparent Fee Structure:</strong> Flat commission at only <span class="highlight-fee">5%</span></li>
+                <li><strong>Market Comparison:</strong> Unlike traditional platforms charging 15%-30%, Bookaa ensures partners retain significantly higher Net Profit.</li>
+                <li><strong>Competitive Edge:</strong> Lower overhead allows partners to offer more aggressive pricing and promotions to end-users.</li>
             </ul>
         </div>
     </section>
 
     <section>
-        <h2>Functional Description</h2>
+        <h2>Functional Specifications</h2>
         <div class="grid-container">
             <div class="feature-box">
-                <h3>📱 Bookaa App (B2C)</h3>
-                <p>For Customers: Real-time booking via API integration.</p>
+                <h3>📱 Bookaa Mobile App (B2C)</h3>
+                <p>A seamless booking journey for modern travelers, optimized via .NET MAUI for native performance.</p>
+                <ul>
+                    <li><strong>Smart Search:</strong> Geo-location based search with sub-second response times.</li>
+                    <li><strong>Live Booking:</strong> Real-time synchronization with the Merchant Admin system.</li>
+                    <li><strong>Secure Vault:</strong> Encrypted user profiles and booking history management.</li>
+                    <li><strong>Modern UI:</strong> Frictionless checkout process designed for high conversion.</li>
+                </ul>
             </div>
             <div class="feature-box">
-                <h3>⚙️ Bookaa Admin (B2B)</h3>
-                <p>For Merchants: Inventory and revenue management system.</p>
+                <h3>⚙️ Bookaa Admin Suite (B2B)</h3>
+                <p>Powerful tools for business owners to control operations via a single mobile or tablet interface.</p>
+                <ul>
+                    <li><strong>Inventory Control:</strong> Update room availability and pricing instantly.</li>
+                    <li><strong>Revenue Analytics:</strong> Comprehensive real-time sales and commission reports.</li>
+                    <li><strong>Push Notification:</strong> Instant alerts for new bookings and system updates.</li>
+                    <li><strong>Channel Management:</strong> Manage property content, imagery, and booking policies.</li>
+                </ul>
             </div>
         </div>
     </section>
 </div>
 
 <section>
-    <h2>Technical Excellence (Standard 2026)</h2>
-    <div class="feature-box">
-        <ul>
-            <li><strong>High Scale:</strong> 100+ Transactions Per Second (TPS).</li>
-            <li><strong>MAUI Optimized:</strong> ป้องกัน Null Reference และ Run บน Android/iOS ได้เสถียร 100%</li>
-            <li><strong>Modern API:</strong> ใช้ DisplayAlertAsync ตามมาตรฐานล่าสุด</li>
+    <h2>Technical Foundation (2026 Production Standard)</h2>
+    <div class="feature-box" style="border-left-color: var(--accent);">
+        <p>ระบบถูกออกแบบมาเพื่อรองรับการขยายตัวระดับ Enterprise ด้วยเทคโนโลยีล่าสุด:</p>
+        <div class="tech-spec">
+            <div class="spec-item">High-Scale 100 TPS</div>
+            <div class="spec-item">.NET MAUI (iOS/Android Native)</div>
+            <div class="spec-item">Null-Safety Architecture</div>
+            <div class="spec-item">AWS Elastic Infrastructure</div>
+            <div class="spec-item">DisplayAlertAsync Optimized</div>
+        </div>
+        <ul style="margin-top: 15px;">
+            <li><strong>Reliability:</strong> การจัดการหน่วยความจำที่เข้มงวด ป้องกันปัญหาแอปเด้งในสภาพแวดล้อมจริง</li>
+            <li><strong>Performance:</strong> สถาปัตยกรรม 100 TPS มั่นใจได้ว่าระบบจะไม่ล่มในช่วง Peak Season</li>
+            <li><strong>Future-Proof:</strong> พัฒนาตามมาตรฐาน Google Production 2026</li>
         </ul>
     </div>
 </section>
 
 <footer>
-    <p>&copy; 2026 MaassLabs Co.,Ltd | Powered by AWS</p>
+    <p>&copy; 2026 MaassLabs Co.,Ltd. All rights reserved. <br> Powered by AWS Cloud Infrastructure.</p>
 </footer>
 
 <script>
@@ -112,15 +153,14 @@
         const en = document.getElementById('content-en');
         const btn = document.getElementById('langBtn');
 
-        // สลับ Class 'active' เพื่อควบคุมการแสดงผล
         if (th.classList.contains('active')) {
             th.classList.remove('active');
             en.classList.add('active');
-            btn.innerText = 'ภาษาไทย';
+            btn.innerText = 'สลับเป็นภาษาไทย';
         } else {
             en.classList.remove('active');
             th.classList.add('active');
-            btn.innerText = 'English';
+            btn.innerText = 'Switch to English';
         }
     }
 </script>
