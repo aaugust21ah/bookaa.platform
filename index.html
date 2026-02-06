@@ -20,12 +20,12 @@
         .grid-container { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-top: 20px; }
         
         .lang-switch { background: var(--accent); color: #fff; border: none; padding: 12px 24px; border-radius: 30px; cursor: pointer; font-weight: bold; box-shadow: 0 4px 10px rgba(255,153,0,0.3); transition: 0.3s; }
-        .lang-switch:hover { transform: translateY(-2px); box-shadow: 0 6px 15px rgba(255,153,0,0.4); }
+        .lang-switch:hover { transform: translateY(-2px); }
 
         .tech-spec { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
-        .spec-item { background: #e8eaed; padding: 5px 12px; border-radius: 4px; font-size: 0.85em; color: #555; border: 1px solid #dcdcdc; }
+        .spec-item { background: #e8eaed; padding: 5px 12px; border-radius: 4px; font-size: 0.85em; color: #555; border: 1px solid #dcdcdc; font-weight: bold; }
 
-        .lang-section { display: none; animation: fadeIn 0.5s ease; }
+        .lang-section { display: none; animation: fadeIn 0.4s ease; }
         .lang-section.active { display: block; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
@@ -48,38 +48,52 @@
     <section>
         <h2>โมเดลธุรกิจอัจฉริยะ (Strategic Disruptor)</h2>
         <div class="disrupt-box">
-            <p>Bookaa พลิกโฉมวงการจองที่พักด้วยการเป็นตัวกลางที่มีประสิทธิภาพสูงสุด เราทำหน้าที่เป็น <strong>Core API Ecosystem</strong> ที่เชื่อมโยง B2B และ B2C เข้าด้วยกัน โดยมีจุดยืนที่ชัดเจนคือการลดภาระค่าใช้จ่ายให้ผู้ประกอบการ</p>
+            <p>Bookaa พลิกโฉมวงการจองที่พักด้วยการเป็นตัวกลางที่มีประสิทธิภาพสูงสุด เราทำหน้าที่เป็น <strong>Core API Ecosystem</strong> ที่เชื่อมโยง B2B และ B2C เข้าด้วยกัน</p>
             <ul>
-                <li><strong>โครงสร้างค่าธรรมเนียม:</strong> เราเก็บค่าธรรมเนียมคงที่เพียง <span class="highlight-fee">5%</span></li>
-                <li><strong>เปรียบเทียบตลาด:</strong> ในขณะที่แพลตฟอร์มอื่นเรียกเก็บ 15% ถึง 30% ทำให้พาร์ทเนอร์ของเราเหลือกำไรสุทธิ (Net Profit) มากขึ้นทันที</li>
-                <li><strong>ความยืดหยุ่น:</strong> ราคาที่ถูกกว่าช่วยให้พาร์ทเนอร์ทำโปรโมชั่นได้แรงกว่าคู่แข่งในตลาด</li>
+                <li><strong>โครงสร้างค่าธรรมเนียม:</strong> เราเก็บค่าธรรมเนียมเพียง <span class="highlight-fee">5%</span> (เจ้าอื่นในตลาด 15-30%)</li>
+                <li><strong>ความได้เปรียบ:</strong> พาร์ทเนอร์เหลือกำไรสุทธิมากขึ้นและสามารถทำราคาที่แข่งขันได้ดีกว่า</li>
             </ul>
         </div>
     </section>
 
     <section>
-        <h2>รายละเอียดฟังก์ชันการใช้งาน (Functional Specs)</h2>
+        <h2>รายละเอียดฟังก์ชันการใช้งาน</h2>
         <div class="grid-container">
             <div class="feature-box">
                 <h3>📱 Bookaa Mobile App (B2C)</h3>
-                <p>ประสบการณ์การจองที่พักที่ลื่นไหลสำหรับผู้ใช้งานยุคใหม่ พัฒนาด้วย .NET MAUI เพื่อประสิทธิภาพสูงสุดบนสมาร์ทโฟน</p>
+                <p>แอปพลิเคชันสำหรับลูกค้าทั่วไป เพื่อการจองที่พักที่รวดเร็วและลื่นไหล</p>
                 <ul>
-                    <li><strong>Smart Search:</strong> ค้นหาที่พักตามพิกัดและราคาที่ดีที่สุดในเสี้ยววินาที</li>
-                    <li><strong>Live Booking:</strong> ระบบจองแบบ Real-time เชื่อมต่อตรงกับระบบ Admin</li>
-                    <li><strong>Secure Vault:</strong> ระบบเก็บข้อมูลสมาชิกและประวัติการจองที่ปลอดภัย</li>
-                    <li><strong>Modern UI:</strong> ออกแบบมาให้ใช้งานง่าย ลดขั้นตอนการ Checkout</li>
+                    <li>Smart Search ค้นหาที่พักแบบ Real-time</li>
+                    <li>Live Booking เชื่อมต่อ API เพื่อความแม่นยำของข้อมูล</li>
                 </ul>
             </div>
             <div class="feature-box">
                 <h3>⚙️ Bookaa Admin Suite (B2B)</h3>
-                <p>เครื่องมือทรงพลังสำหรับเจ้าของธุรกิจ เพื่อควบคุมทุกอย่างผ่านแอปพลิเคชันเดียวบนมือถือและแท็บเล็ต</p>
+                <p>เครื่องมือสำหรับเจ้าของธุรกิจ เพื่อบริหารจัดการที่พักและรายได้</p>
                 <ul>
-                    <li><strong>Inventory Control:</strong> ปรับสถานะห้องพัก เปิด/ปิด การขายได้ทันที</li>
-                    <li><strong>Revenue Analytics:</strong> รายงานยอดขายและค่าธรรมเนียมแบบ Real-time</li>
-                    <li><strong>Push Notification:</strong> รับแจ้งเตือนคำสั่งจองใหม่ทันทีผ่านระบบ Push</li>
-                    <li><strong>Channel Support:</strong> จัดการข้อมูลที่พัก รูปภาพ และเงื่อนไขการจอง</li>
+                    <li>Inventory Control จัดการห้องพักได้ทันที</li>
+                    <li>Revenue Analytics รายงานยอดขายและค่าธรรมเนียม</li>
                 </ul>
             </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>รากฐานทางเทคนิค (2026 Production Standard)</h2>
+        <div class="feature-box" style="border-left-color: var(--accent);">
+            <p>ระบบถูกออกแบบมาเพื่อรองรับการขยายตัวระดับ Enterprise ด้วยเทคโนโลยีล่าสุด:</p>
+            <div class="tech-spec">
+                <div class="spec-item">High-Scale 100 TPS</div>
+                <div class="spec-item">.NET MAUI (iOS/Android Native)</div>
+                <div class="spec-item">Null-Safety Architecture</div>
+                <div class="spec-item">AWS Elastic Infrastructure</div>
+                <div class="spec-item">DisplayAlertAsync Optimized</div>
+            </div>
+            <ul style="margin-top: 15px;">
+                <li><strong>Reliability:</strong> การจัดการหน่วยความจำที่เข้มงวด ป้องกันปัญหาแอปเด้งในสภาพแวดล้อมจริง</li>
+                <li><strong>Performance:</strong> สถาปัตยกรรม 100 TPS มั่นใจได้ว่าระบบจะไม่ล่มในช่วง Peak Season</li>
+                <li><strong>Future-Proof:</strong> พัฒนาตามมาตรฐาน Google Production 2026</li>
+            </ul>
         </div>
     </section>
 </div>
@@ -88,11 +102,10 @@
     <section>
         <h2>Strategic Disruptor Model</h2>
         <div class="disrupt-box">
-            <p>Bookaa redefines the hospitality landscape as a high-efficiency <strong>Core API Ecosystem</strong>, bridging the gap between B2B and B2C while prioritizing partner profitability.</p>
+            <p>Bookaa redefines the hospitality landscape as a high-efficiency <strong>Core API Ecosystem</strong>, bridging the gap between B2B and B2C.</p>
             <ul>
-                <li><strong>Transparent Fee Structure:</strong> Flat commission at only <span class="highlight-fee">5%</span></li>
-                <li><strong>Market Comparison:</strong> Unlike traditional platforms charging 15%-30%, Bookaa ensures partners retain significantly higher Net Profit.</li>
-                <li><strong>Competitive Edge:</strong> Lower overhead allows partners to offer more aggressive pricing and promotions to end-users.</li>
+                <li><strong>Fee Structure:</strong> Flat commission at only <span class="highlight-fee">5%</span> (Market Standard 15-30%)</li>
+                <li><strong>Competitive Edge:</strong> Partners retain significantly higher Net Profit and can offer better pricing.</li>
             </ul>
         </div>
     </section>
@@ -102,46 +115,42 @@
         <div class="grid-container">
             <div class="feature-box">
                 <h3>📱 Bookaa Mobile App (B2C)</h3>
-                <p>A seamless booking journey for modern travelers, optimized via .NET MAUI for native performance.</p>
+                <p>Seamless booking journey for customers, optimized for performance.</p>
                 <ul>
-                    <li><strong>Smart Search:</strong> Geo-location based search with sub-second response times.</li>
-                    <li><strong>Live Booking:</strong> Real-time synchronization with the Merchant Admin system.</li>
-                    <li><strong>Secure Vault:</strong> Encrypted user profiles and booking history management.</li>
-                    <li><strong>Modern UI:</strong> Frictionless checkout process designed for high conversion.</li>
+                    <li>Smart Search with sub-second response times.</li>
+                    <li>Live Booking synchronized directly via API.</li>
                 </ul>
             </div>
             <div class="feature-box">
                 <h3>⚙️ Bookaa Admin Suite (B2B)</h3>
-                <p>Powerful tools for business owners to control operations via a single mobile or tablet interface.</p>
+                <p>Powerful tools for business owners to manage operations and revenue.</p>
                 <ul>
-                    <li><strong>Inventory Control:</strong> Update room availability and pricing instantly.</li>
-                    <li><strong>Revenue Analytics:</strong> Comprehensive real-time sales and commission reports.</li>
-                    <li><strong>Push Notification:</strong> Instant alerts for new bookings and system updates.</li>
-                    <li><strong>Channel Management:</strong> Manage property content, imagery, and booking policies.</li>
+                    <li>Inventory Control for instant room status updates.</li>
+                    <li>Revenue Analytics with real-time fee reporting.</li>
                 </ul>
             </div>
         </div>
     </section>
-</div>
 
-<section>
-    <h2>Technical Foundation (2026 Production Standard)</h2>
-    <div class="feature-box" style="border-left-color: var(--accent);">
-        <p>ระบบถูกออกแบบมาเพื่อรองรับการขยายตัวระดับ Enterprise ด้วยเทคโนโลยีล่าสุด:</p>
-        <div class="tech-spec">
-            <div class="spec-item">High-Scale 100 TPS</div>
-            <div class="spec-item">.NET MAUI (iOS/Android Native)</div>
-            <div class="spec-item">Null-Safety Architecture</div>
-            <div class="spec-item">AWS Elastic Infrastructure</div>
-            <div class="spec-item">DisplayAlertAsync Optimized</div>
+    <section>
+        <h2>Technical Foundation (2026 Production Standard)</h2>
+        <div class="feature-box" style="border-left-color: var(--accent);">
+            <p>Designed for Enterprise scalability using the latest stack:</p>
+            <div class="tech-spec">
+                <div class="spec-item">High-Scale 100 TPS</div>
+                <div class="spec-item">.NET MAUI (iOS/Android Native)</div>
+                <div class="spec-item">Null-Safety Architecture</div>
+                <div class="spec-item">AWS Elastic Infrastructure</div>
+                <div class="spec-item">DisplayAlertAsync Optimized</div>
+            </div>
+            <ul style="margin-top: 15px;">
+                <li><strong>Reliability:</strong> Strict memory management ensuring 0% crash rate on production.</li>
+                <li><strong>Performance:</strong> 100 TPS architecture ensures stability during peak traffic.</li>
+                <li><strong>Future-Proof:</strong> Built on Google Production 2026 standards.</li>
+            </ul>
         </div>
-        <ul style="margin-top: 15px;">
-            <li><strong>Reliability:</strong> การจัดการหน่วยความจำที่เข้มงวด ป้องกันปัญหาแอปเด้งในสภาพแวดล้อมจริง</li>
-            <li><strong>Performance:</strong> สถาปัตยกรรม 100 TPS มั่นใจได้ว่าระบบจะไม่ล่มในช่วง Peak Season</li>
-            <li><strong>Future-Proof:</strong> พัฒนาตามมาตรฐาน Google Production 2026</li>
-        </ul>
-    </div>
-</section>
+    </section>
+</div>
 
 <footer>
     <p>&copy; 2026 MaassLabs Co.,Ltd. All rights reserved. <br> Powered by AWS Cloud Infrastructure.</p>
