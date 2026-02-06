@@ -1,47 +1,166 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bookaa Platform | High-Performance System</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; }
-        header { border-bottom: 2px solid #232f3e; padding-bottom: 20px; margin-bottom: 30px; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 20px; transition: all 0.3s ease; }
+        header { border-bottom: 2px solid #232f3e; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-start; }
         .badge { background: #232f3e; color: white; padding: 5px 12px; border-radius: 15px; font-size: 0.8em; }
-        h1 { color: #232f3e; margin-bottom: 5px; }
-        .feature-box { background: #f4f4f4; padding: 20px; border-left: 5px solid #ff9900; margin: 20px 0; }
-        footer { margin-top: 50px; font-size: 0.8em; color: #777; text-align: center; }
+        h1 { color: #232f3e; margin: 0 0 5px 0; }
+        h2 { color: #232f3e; border-left: 5px solid #ff9900; padding-left: 10px; margin-top: 30px; }
+        .feature-box { background: #f4f4f4; padding: 20px; border-left: 5px solid #232f3e; margin: 20px 0; border-radius: 0 8px 8px 0; }
+        .highlight { color: #e44d26; font-weight: bold; font-size: 1.2em; }
+        .grid-container { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        
+        /* Language Button Style */
+        .lang-switch {
+            background: #ff9900;
+            color: #fff;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 0.9em;
+            transition: background 0.2s;
+        }
+        .lang-switch:hover { background: #e68a00; }
+
+        footer { margin-top: 50px; font-size: 0.8em; color: #777; text-align: center; border-top: 1px solid #ddd; padding-top: 20px; }
+        @media (max-width: 600px) { .grid-container { grid-template-columns: 1fr; } header { flex-direction: column; } .lang-switch { margin-top: 15px; } }
+        
+        /* Hide English by default */
+        [lang="en"] { display: none; }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>Bookaa Platform</h1>
-    <span class="badge">Next-Gen Enterprise Solution</span>
+    <div>
+        <h1 id="main-title">Bookaa Platform</h1>
+        <span class="badge" id="sub-title">Next-Gen Enterprise Solution (B2B2C)</span>
+    </div>
+    <button class="lang-switch" onclick="toggleLanguage()" id="langBtn">English</button>
 </header>
 
-<section>
-    <h2>Our Vision</h2>
-    <p>Bookaa Platform is a robust platform designed for high-scale operations. Built with <strong>.NET MAUI</strong> and powered by <strong>AWS Infrastructure</strong>, we provide a seamless experience for modern enterprises.</p>
-</section>
+<div id="content-th" lang="th">
+    <section>
+        <h2>กลยุทธ์ทำลายล้างตลาด (Disruptive Model)</h2>
+        <div class="feature-box" style="background: #fffbe6; border-color: #ff9900;">
+            <p>เราคือ API Gateway ที่เน้นคืนกำไรให้พาร์ทเนอร์ ด้วยอัตราค่าธรรมเนียมที่ <strong>"ต่ำที่สุดในตลาด"</strong></p>
+            <ul>
+                <li><strong>ค่าธรรมเนียม Bookaa:</strong> <span class="highlight">เพียง 5%</span></li>
+                <li><strong>มาตรฐานตลาดทั่วไป:</strong> 15% - 30%</li>
+            </ul>
+            <p>ช่วยให้ธุรกิจขยายตัวได้เร็วขึ้นด้วยต้นทุนที่ถูกลงกว่า 3-6 เท่า</p>
+        </div>
+    </section>
 
-<div class="feature-box">
-    <h3>Technical Excellence</h3>
-    <ul>
-        <li><strong>Scalability:</strong> Engineered to handle <strong>100+ Transactions Per Second (TPS)</strong> with zero latency issues.</li>
-        <li><strong>Stability:</strong> Implementation of strict <strong>Null Safety</strong> and Memory Management to ensure a crash-free experience on Android and iOS.</li>
-        <li><strong>Cloud Native:</strong> Leveraging AWS for maximum uptime.</li>
-    </ul>
+    <section>
+        <h2>ฟังก์ชันการทำงาน (Functional Description)</h2>
+        <div class="grid-container">
+            <div class="feature-box">
+                <h3>📱 MAUI Bookaa App (B2C)</h3>
+                <p>แอปพลิเคชันสำหรับลูกค้าทั่วไป เพื่อการจองที่พักที่รวดเร็ว</p>
+                <ul>
+                    <li>ค้นหาและจองที่พักแบบ Real-time</li>
+                    <li>ระบบชำระเงินความปลอดภัยสูง</li>
+                    <li>เชื่อมต่อ API เพื่อราคาที่อัปเดตที่สุด</li>
+                </ul>
+            </div>
+            <div class="feature-box">
+                <h3>⚙️ MAUI Bookaa Admin (B2B)</h3>
+                <p>แอปพลิเคชันสำหรับผู้ประกอบการ เพื่อบริหารจัดการหลังบ้าน</p>
+                <ul>
+                    <li>ระบบ Dashboard บริหารจัดการห้องพัก</li>
+                    <li>จัดการ Inventory และสถานะแบบเรียลไทม์</li>
+                    <li>รายงานรายได้และวิเคราะห์ยอดขาย</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</div>
+
+<div id="content-en" lang="en">
+    <section>
+        <h2>Disruptive Model</h2>
+        <div class="feature-box" style="background: #fffbe6; border-color: #ff9900;">
+            <p>We are an API Gateway focused on partner profitability with the <strong>"Lowest Commission in the Market."</strong></p>
+            <ul>
+                <li><strong>Bookaa Fee:</strong> <span class="highlight">Only 5%</span></li>
+                <li><strong>Market Standard:</strong> 15% - 30%</li>
+            </ul>
+            <p>Empowering businesses to scale 3-6x faster with significantly lower overhead.</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Functional Description</h2>
+        <div class="grid-container">
+            <div class="feature-box">
+                <h3>📱 MAUI Bookaa App (B2C)</h3>
+                <p>Customer-facing application for seamless accommodation booking.</p>
+                <ul>
+                    <li>Real-time search and instant booking</li>
+                    <li>Secure payment gateway integration</li>
+                    <li>API-driven dynamic pricing updates</li>
+                </ul>
+            </div>
+            <div class="feature-box">
+                <h3>⚙️ MAUI Bookaa Admin (B2B)</h3>
+                <p>Enterprise application for merchants and property management.</p>
+                <ul>
+                    <li>Comprehensive Management Dashboard</li>
+                    <li>Inventory and room status management</li>
+                    <li>Revenue reporting and sales analytics</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 </div>
 
 <section>
-    <h2>Key Features</h2>
-    <p>Focused on efficiency and real-time data accuracy, Bookaa Platform removes technical bottlenecks and allows founders to focus on growth.</p>
+    <h2 id="tech-title">Technical Excellence</h2>
+    <div class="feature-box">
+        <ul id="tech-list">
+            <li><strong>High Throughput:</strong> Built for <strong>100 TPS (Transactions Per Second)</strong>.</li>
+            <li><strong>Robust Architecture:</strong> Built with .NET MAUI following <strong>Google Production 2026</strong> standards.</li>
+            <li><strong>Stability:</strong> Strict Null Safety & Memory Management to prevent crashes on Android/iOS.</li>
+            <li><strong>Cloud Native:</strong> Powered by <strong>AWS</strong> infrastructure.</li>
+        </ul>
+    </div>
 </section>
 
 <footer>
     <p>&copy; <script>document.write(new Date().getFullYear());</script> MaassLabs Co.,Ltd All rights reserved. Powered by AWS.</p>
 </footer>
+
+<script>
+    function toggleLanguage() {
+        const thContent = document.getElementById('content-th');
+        const enContent = document.getElementById('content-en');
+        const btn = document.getElementById('langBtn');
+        const techTitle = document.getElementById('tech-title');
+
+        if (thContent.style.display === 'none') {
+            // Switch to Thai
+            thContent.style.display = 'block';
+            enContent.style.display = 'none';
+            btn.innerText = 'English';
+            techTitle.innerText = 'Technical Excellence';
+            document.documentElement.lang = 'th';
+        } else {
+            // Switch to English
+            thContent.style.display = 'none';
+            enContent.style.display = 'block';
+            btn.innerText = 'ภาษาไทย';
+            techTitle.innerText = 'Technical Excellence';
+            document.documentElement.lang = 'en';
+        }
+    }
+</script>
 
 </body>
 </html>
